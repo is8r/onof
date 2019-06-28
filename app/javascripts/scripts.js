@@ -1,4 +1,4 @@
-import Onof from '../../index.js'
+import Onof from 'onof'
 
 document.addEventListener("DOMContentLoaded", function () {
   var onof = new Onof()
