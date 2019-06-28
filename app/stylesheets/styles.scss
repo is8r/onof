@@ -1,0 +1,25 @@
+@import "~spuit";
+
+@import "styles/config/variables";
+@import "styles/config/mixins";
+
+@include include-normalize;
+
+// basic styles
+
+html {
+  font-size: 100%;
+  @include breakpoint-down(md) {
+    font-size: 80%;
+  }
+}
+
+body {
+  color: $color-black;
+  background: #fff;
+  padding: 4rem;
+}
+
+.hidden {
+  display: none !important;
+}

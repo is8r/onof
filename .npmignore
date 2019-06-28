@@ -1,0 +1,11 @@
+.sass-cache
+.DS_Store
+app/html
+app/javascripts/scripts.js
+app/stylesheets
+dist
+node_modules
+webpack
+npm-debug.log
+yarn.lock
+.editorconfig

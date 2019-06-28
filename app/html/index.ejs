@@ -1,0 +1,30 @@
+<%
+var meta = {
+  title: 'onof'
+};
+%>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title><%= meta.title %></title>
+
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+
+  <div class="example">
+    <a class="test" href=".target" data-onof="hidden" aria-controls=".target">.target</a>
+    <button role="button" data-onof="hidden" data-onof-target="#target"
+      aria-controls="#target">#target</button>
+
+    <div id="target">#target</div>
+    <div class="target">.target</div>
+  </div>
+</body>
+
+</html>
