@@ -5,7 +5,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const TerserPlugin = require('terser-webpack-plugin')
 
 let app = './app'
-let dist = '../dist'
+let dist = '../docs'
 
 module.exports = {
   entry: {

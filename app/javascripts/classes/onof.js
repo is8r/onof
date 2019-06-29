@@ -22,16 +22,16 @@ export default class {
     this.init()
   }
   init() {
-    var elements = document.querySelectorAll('[data-onof]');
+    var elements = document.querySelectorAll('[data-onof]')
     for (let i = 0; i < elements.length; i++) {
-      const el = elements[i];
-      const scope = this;
+      const el = elements[i]
+      const scope = this
       el.onclick = function (e) {
-        e.preventDefault();
+        e.preventDefault()
         let className = scope.getClasstName(e)
         let targetElements = scope.getTargetElements(e)
         for (let index = 0; index < targetElements.length; index++) {
-          const element = targetElements[index];
+          const element = targetElements[index]
           let isActive = element.classList.toggle(className)
 
           //複数ターゲットがある場合、最初の要素のアクティブ状態を採用
@@ -55,7 +55,7 @@ export default class {
             })
           }
         }
-      };
+      }
     }
   }
 
@@ -68,7 +68,7 @@ export default class {
   }
 
   getTargetName(e) {
-    let targetName;
+    let targetName
     if (e.currentTarget.dataset.onofTarget) {
       // if target is dataOnofTarget
       targetName = e.currentTarget.dataset.onofTarget
@@ -102,6 +102,6 @@ export default class {
       event = document.createEvent('CustomEvent')
       event.initCustomEvent(eventName, false, false, detail)
     }
-    document.body.dispatchEvent(event);
+    document.body.dispatchEvent(event)
   }
 }
