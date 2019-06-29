@@ -1,6 +1,6 @@
 <%
 var meta = {
-  title: 'onof'
+  title: 'onof JS'
 };
 %>
 
@@ -17,14 +17,138 @@ var meta = {
 
 <body>
 
-  <div class="example">
-    <a class="test" href=".target" data-onof="hidden" aria-controls=".target">.target</a>
-    <button role="button" data-onof="hidden" data-onof-target="#target"
-      aria-controls="#target">#target</button>
+  <div class="l-container">
+    <div class="l-sidebar">
+      <div class="sidebar">
+        <h1>onof JS</h1>
+        
+        <ul>
+          <li><a href="#howto">使い方</a></li>
+          <li><a href="#events">イベント</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="l-content content">
 
-    <div id="target">#target</div>
-    <div class="target">.target</div>
+      <a id="howto"></a>
+      <h2>使い方</h2>
+      <p>
+        サンプルでは<code>data-onof</code>の値に<code>hidden</code>を設定して、対象の要素に<code>.hidden</code>セレクタを追加、削除する事で、要素の表示/非表示を切り替えています。
+      </p>
+
+      <div class="card">
+        <h3>リンクから切り替える場合</h3>
+        <a href="#TargetAnchor" data-onof="hidden" aria-controls="#TargetAnchor">Anchor</a>
+        <div class="example-target" id="TargetAnchor">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt
+          ut
+          labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+
+        <pre>
+          <code>
+&lt;a href="#TargetAnchor" data-onof="hidden">Anchor&lt;/a>
+&lt;div id="TargetAnchor">...&lt;/div>
+          </code>
+        </pre>
+
+      </div>
+
+      <div class="card">
+        <h3>ボタンから切り替える場合</h3>
+        <button role="button" data-onof="hidden" data-onof-target="#TargetButton"
+          aria-controls="#TargetButton">Button</button>
+        <div class="example-target" id="TargetButton">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt
+          ut
+          labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>対象が複数の場合（ターゲットをセレクタで指定して切り替える方法）</h3>
+        <a class="test" href=".targetSelector" data-onof="hidden" aria-controls=".targetSelector">リンク</a>
+
+        <div class="example-targets">
+          <div class="example-target targetSelector">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod
+            tempor
+            incididunt
+            ut
+            labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div class="example-target targetSelector">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod
+            tempor
+            incididunt
+            ut
+            labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div class="example-target targetSelector">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod
+            tempor
+            incididunt
+            ut
+            labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis
+            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+      </div>
+
+      <a id="events"></a>
+      <h2>イベント</h2>
+      <p>クラスが追加された時と外された時にそれぞれイベントが発生します。</p>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>on.onof</td>
+            <td>クラスが追加されたタイミングで発生するイベントです</td>
+          </tr>
+          <tr>
+            <td>off.onof</td>
+            <td>クラスが削除されたタイミングで発生するイベントです</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre>
+        <code>
+document.body.addEventListener('on.onof', function (e) {
+  console.log(e)
+})
+
+document.body.addEventListener('off.onof', function (e) {
+  console.log(e)
+})
+        </code>
+      </pre>
+
+    </div>
   </div>
+
 </body>
 
 </html>
