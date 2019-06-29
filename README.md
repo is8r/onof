@@ -2,17 +2,22 @@
 
 toggle css selector.
 
-## dev
+[demo](https://is8r.github.io/onof/)
 
-server:
+## install
 
-```
-$ yarn install
-$ yarn run dev
-```
-
-build:
+install:
 
 ```
-$ yarn run build
+$ yarn add --dev onof
+```
+
+import:
+
+```
+import Onof from "onof"
+
+document.addEventListener("DOMContentLoaded", function () {
+  var onof = new Onof()
+})
 ```
