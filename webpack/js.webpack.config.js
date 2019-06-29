@@ -4,7 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 let app = './app'
-let dist = '../dist'
+let dist = '../docs'
 
 module.exports = {
   entry: {
@@ -15,11 +15,19 @@ module.exports = {
     path: __dirname + '/' + dist
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: dist,
     port: 8080
   },
   plugins: [
-    new UglifyJsPlugin(),
+    // new UglifyJsPlugin({
+    //   sourceMap: true,
+    //   uglifyOptions: {
+    //     ecma: 8,
+    //     compress: {
+    //       warnings: false
+    //     }
+    //   }
+    // }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../app/html/index.ejs'),
       minify: false
